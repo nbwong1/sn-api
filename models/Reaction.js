@@ -19,14 +19,11 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            // add getter method for the Date/Timestamp 
         },
     }, 
     { 
-        toJSON: {
-            getters: true,
-        },
-        id: false,
+        timestamps: true,
+        toJSON: { getters: true, virtuals: true },
     }
 );
 
